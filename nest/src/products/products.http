@@ -1,0 +1,12 @@
+###
+GET http://localhost:3000/products
+
+### Create a new bank account
+POST http://localhost:3000/products
+Content-Type: application/json
+
+{
+    "name": "name teste",
+    "description": "products description teste",
+    "price": 11.22
+}

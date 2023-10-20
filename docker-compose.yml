@@ -1,0 +1,24 @@
+version: "3"
+
+services:
+  go:
+    container_name: go
+    build:
+      context: ./go
+      dockerfile: Dockerfile
+    ports:
+      - "50051:50051"
+    # extra_hosts:
+    #   - "host.docker.internal:host-gateway"
+
+  nest:
+    container_name: nest
+    build:
+      context: ./nest
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    depends_on:
+      - go
+    # extra_hosts:
+    #   - "host.docker.internal:host-gateway"
